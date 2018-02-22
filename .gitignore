@@ -1,22 +1,51 @@
-# Compiled class file
-*.class
 
-# Log file
-*.log
+package guessinggame;
 
-# BlueJ files
-*.ctxt
+import java.util.*;
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+public class GuessingGame {
 
-# Package Files #
-*.jar
-*.war
-*.ear
-*.zip
-*.tar.gz
-*.rar
-
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+    
+    public static void main(String[] args) {
+       System.out.println("Please Guess a number between 1 and 100");
+       Random rand = new Random();
+       Scanner scan = new Scanner(System.in);
+       int randInt = rand.nextInt(100)+1;
+       boolean guessed = false;
+       int guess = 0;
+       
+       while(!guessed)
+       {
+          do{
+           guess = scan.nextInt();
+          }   
+     
+          while(guess <0 );{
+           System.out.println("Guess again");
+           
+       }
+          if(guess > 100){
+              System.out.println("Number needs to be between 0-100");
+          }
+          if(guess < 0){
+              System.out.println("Number needs to be between 0-100");
+          }
+        
+          if(guess < randInt){
+           System.out.println(guess + " is too low");
+           
+       }
+        
+          else if(guess > randInt){
+            System.out.println(guess + " is too high");
+        }
+        
+          else if (guess == randInt){
+        System.out.println(guess + "YAY!! you guessed the random number!!");
+    }
+      
+    }
+    }
+}
+    
+     
